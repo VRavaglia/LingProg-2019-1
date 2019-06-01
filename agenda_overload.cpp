@@ -46,7 +46,7 @@ void AgendaOverload::removeContato(string nome){
 }
 
 void AgendaOverload::adicionaContato(ContatoOverload &contato){
-	contatos.push_back(new ContatoOverload(contato));
+	contatos.push_back(&contato);
 }
 
 AgendaOverload &AgendaOverload::operator+(AgendaOverload &agenda){

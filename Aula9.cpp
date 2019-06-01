@@ -46,9 +46,10 @@ void ex1(){
 
 void ex2e3(){
     AgendaOverload agenda1;
+    Colega *colega1 = new Colega("Colega1", 666, 10, 10);
     Colega colega2("Colega2", 666, 10, 10);
     ContatoOverload contato1("contato1", 666);
-    agenda1.adicionaContato(colega2);
+    agenda1.adicionaContato(*colega1);
     agenda1.adicionaContato(colega2);
     agenda1.adicionaContato(contato1);
 
@@ -93,7 +94,7 @@ void ex3(){
 
 int main(){
     //ex1();
-    //ex2e3();
-    ex3();
+    ex2e3();
+    //ex3();
     return 0;
 }
