@@ -9,11 +9,23 @@ public:
 	ContatoOverload(std::string nome, int telefone);
 	std::string getNome();
     int getTelefone();
+    virtual std::string print();
 
 private:
 	std::string nome;
 	int telefone;
 
+};
+
+class Colega: public ContatoOverload{
+public:
+    Colega(std::string nome, int telefone, int classe, int turma);
+    std::string print() override;
+    int getClasse();
+    int getTurma();
+private:
+    int classe;
+    int turma;
 };
 
 
@@ -27,7 +39,6 @@ public:
 	void adicionaContato(ContatoOverload &contato);
 	AgendaOverload &operator+(AgendaOverload &agenda);
 	AgendaOverload &operator-(AgendaOverload &agenda);
-	
 
 private:
 	std::vector <ContatoOverload *> contatos;

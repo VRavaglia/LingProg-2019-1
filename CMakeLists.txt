@@ -53,4 +53,6 @@ add_executable(Aula08
 add_executable(Aula09
         Aula9.cpp
         agenda_overload.cpp
-        agenda_overload.h)
+        agenda_overload.h
+        agenda_herda_vetor.cpp
+        agenda_herda_vetor.h)

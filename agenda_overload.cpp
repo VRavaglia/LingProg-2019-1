@@ -17,6 +17,10 @@ int ContatoOverload::getTelefone() {
     return telefone;
 }
 
+std::string ContatoOverload::print() {
+    return "Nome: " + nome + " Telefone: " + to_string(telefone);
+}
+
 AgendaOverload::AgendaOverload(AgendaOverload &agenda){
 	for(int i = 0; i < agenda.contatos.size(); i++){
 		contatos.push_back(new ContatoOverload(*agenda.contatos.at(i)));
@@ -90,7 +94,24 @@ AgendaOverload &AgendaOverload::operator-(AgendaOverload &agenda){
 
 std::ostream &operator<<(std::ostream &out, AgendaOverload &agenda) {
     for(auto contato : agenda.contatos){
-        out << "Nome: " << contato->getNome() << "  Telefone: " << contato->getTelefone() << endl;
+        out << contato->print() << endl;
     }
     return out;
+}
+
+Colega::Colega(std::string nome, int telefone, int classe, int turma): ContatoOverload(nome, telefone) {
+    this->classe = classe;
+    this->turma = turma;
+}
+
+int Colega::getClasse() {
+    return classe;
+}
+
+int Colega::getTurma() {
+    return turma;
+}
+
+std::string Colega::print() {
+    return "Nome: " + getNome() + " Telefone: " + to_string(getTelefone()) + " Classe:" + to_string(classe) + " Turma: " + to_string(turma);
 }
