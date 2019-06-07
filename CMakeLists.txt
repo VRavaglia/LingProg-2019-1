@@ -56,3 +56,11 @@ add_executable(Aula09
         agenda_overload.h
         agenda_herda_vetor.cpp
         agenda_herda_vetor.h)
+
+add_executable(Aula10
+        Aula10.cpp
+        ListaRestrita.h
+        listaRestritaVetor.cpp
+        listaRestritaVetor.h
+        listaRestritaEncadeada.h
+        arvore.h)
